@@ -32,9 +32,10 @@ public class TodoController {
         return todoService.getById(id);
     }
 
-    @GetMapping("/{id}/complete")
-    public Todo complete(@PathVariable Long id) {
-        return todoService.markComplete(id);
+    @GetMapping("/{id}/complete/{status}")
+    public Todo complete(@PathVariable Long id,
+                         @PathVariable boolean status) {
+        return todoService.markComplete(id, status);
     }
 
     @DeleteMapping("/{id}")

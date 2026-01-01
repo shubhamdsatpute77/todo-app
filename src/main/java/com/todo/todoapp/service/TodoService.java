@@ -11,5 +11,5 @@ public interface TodoService {
     void delete(Long id);
     List<Todo> findAll();
     Todo getById(Long id);
-    Todo markComplete(Long id);
+    Todo markComplete(Long id, Boolean complete);
 }

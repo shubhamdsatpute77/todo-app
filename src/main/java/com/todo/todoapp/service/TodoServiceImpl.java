@@ -48,9 +48,9 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
-    public Todo markComplete(Long id) {
+    public Todo markComplete(Long id, Boolean complete) {
         Todo todo = todoRepository.findById(id).orElseThrow(() -> new RuntimeException("Todo not found"));
-        todo.setCompleted(true);
+        todo.setCompleted(complete);
         return todoRepository.save(todo);
     }
 }
