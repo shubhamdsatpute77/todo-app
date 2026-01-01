@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/v1/todos/")
+@CrossOrigin(origins = "http://localhost:5173")
+@RestController
+@RequestMapping("/api/v1/todos")
 public class TodoController {
     private final TodoService todoService;
 
